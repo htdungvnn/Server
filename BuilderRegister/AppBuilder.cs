@@ -1,4 +1,6 @@
-namespace API.Builder;
+using NLog;
+
+namespace API.BuilderRegister;
 
 public static class AppBuilder
 {
@@ -11,5 +13,6 @@ public static class AppBuilder
         }
 
         builder.UseHttpsRedirection();
+        LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/Logger/nlog.config"));
     }
 }
